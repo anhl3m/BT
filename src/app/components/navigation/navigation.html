@@ -1,0 +1,14 @@
+<div id="navigation">
+    <ul>
+        <li ng-repeat="node in vm.menu">
+            <div class="navigation-node">
+                <span flex>{{node.name}}</span>
+                <md-icon ng-show="node.terms">keyboard_arrow_down</md-icon>
+                <md-icon ng-if="node.iterms && isHide">navigate_next</md-icon>
+            </div>
+            <div class="navigation-item" ng-if="node.iterms && !isHide" ng-repeat="iterm in node.iterms">
+                <span>{{iterm}}</span>
+            </div>
+        </li>
+    </ul>
+</div>

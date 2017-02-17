@@ -1,0 +1,77 @@
+<!--<div id="main">
+  <md-content>
+    <header>
+      <acme-navbar creation-date="main.creationDate"></acme-navbar>
+    </header>
+    <div layout="row" layout-align="start">
+      <div layout="column" layout-align="start center">
+        <div id="navigation"> 
+          <md-list>
+            <md-list-item class="node" ng-repeat="node in main.menu">
+              <div layout="column">
+                <div layout="row" layout-align="splace-between center">
+                  <span flex>{{node.name}}</span>
+                  <md-icon class="background-icon-white" ng-if="node.item && main.isHide" ng-click="main.isHide = !main.isHide">keyboard_arrow_down</md-icon>
+                  <md-icon class="background-icon-white" ng-if="node.item && !main.isHide" ng-click="main.isHide = !main.isHide">navigate_next</md-icon>
+                </div>
+
+                <md-list ng-hide="node.item && !main.isHide">
+                  <md-list-item ng-repeat="item in node.item"  class="node-item">
+                    {{item.name}}
+                  </md-list-item>
+                </md-list>
+              </div>
+              
+            </md-list-item>
+          </md-list>
+        </div>
+      </div>
+
+      
+    </div>
+  </md-content>
+
+</div>-->
+
+<div class="techs" layout-align="center">
+        <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
+          <md-card-content>
+            <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
+            <h3 class="md-title">{{ awesomeThing.title }}</h3>
+            <p>{{ awesomeThing.description }}</p>
+          </md-card-content>
+          <div class="md-action-buttons">
+            <md-button ng-href="{{ awesomeThing.url }}">Website</md-button>
+          </div>
+        </md-card>
+</div>
+
+<!--<div id="main">
+  <acme-navbar creation-date="main.creationDate"></acme-navbar>
+  <div layout="row" layout-align="start">
+    <div layout="column" layout-align="start center">
+          <div id="navigation"> 
+            <md-list>
+              <md-list-item class="node" ng-repeat="node in main.menu">
+                <div layout="column">
+                  <div layout="row" layout-align="splace-between center">
+                    <span flex>{{node.name}}</span>
+                    <md-icon class="background-icon-white" ng-if="node.item && main.isHide" ng-click="main.isHide = !main.isHide">keyboard_arrow_down</md-icon>
+                    <md-icon class="background-icon-white" ng-if="node.item && !main.isHide" ng-click="main.isHide = !main.isHide">navigate_next</md-icon>
+                  </div>
+
+                  <md-list ng-hide="node.item && !main.isHide">
+                    <md-list-item ng-repeat="item in node.item"  class="node-item">
+                      {{item.name}}
+                    </md-list-item>
+                  </md-list>
+                </div>
+              </md-list-item>
+            </md-list>
+          </div>
+    </div>
+    <div ui-view></div>
+  </div>
+</div>-->
+
+

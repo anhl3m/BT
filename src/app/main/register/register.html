@@ -1,0 +1,64 @@
+<div id="register" layout="column" class="flex-scrollable" ms-scroll>
+    <div id="register-form-wrapper" layout="column" layout-align="center center">
+        <div id="register-form" class="md-whiteframe-8dp">
+            <div class="logo">
+                <span>F</span>
+            </div>
+            <div class="title">Create an account</div>
+            <form name="registerForm" novalidate>
+                <md-input-container class="md-block" md-no-float>
+                    <input type="text" name="name" ng-model="register.name" placeholder="Name" required>
+                    <div ng-messages="registerForm.name.$error">
+                        <div ng-message="required">
+                            <span>Username field is required</span>
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" md-no-float>
+                    <input type="email" name="email" ng-model="register.email" placeholder="Email" ng-pattern="/^.+@.+\..+$/" required>
+                    <div ng-messages="registerForm.email.$error">
+                        <div ng-message="required">
+                            <span>Email field is required</span>
+                        </div>
+                        <div ng-message="pattern">
+                            <span>Email must be a valid e-mail address</span>
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" md-no-float>
+                    <input type="password" name="password" ng-model="register.password" placeholder="Password" required>
+                    <div ng-messages="registerForm.password.$error">
+                        <div ng-message="required">
+                            <span>Password field is required</span>
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" md-no-float>
+                    <input type="password" name="passwordCf" ng-model="register.passwordCf" placeholder="Password (Confirm)" required>
+                    <div ng-messages="registerForm.passwordCf.$error">
+                        <div ng-message="required">
+                            <span>Password confirm field is required</span>
+                        </div>
+                    </div>
+                </md-input-container>
+                <div layout="row" layout-align="center center" >
+                    <md-checkbox class="md-primary terms" ng-model="register.accept"></md-checkbox>
+                    <div layout-sm="column" layout-align="center center" class="terms">
+                        <span>I read and accept </span>
+                        <a href="#"> terms and conditions</a>
+                    </div>
+                </div>
+                <md-button type="submit" class="md-raised md-primary submit-button" 
+                           ng-disabled="registerForm.$invalid || registerForm.$pristine">
+                    CREATE MY ACCOUNT
+                </md-button>
+            </form>
+            <div layout="row"layout-align="center center">
+                <div layout-sm="column" class="login">
+                    <span>Already have an accoutn?</span>
+                    <a ui-sref="login">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

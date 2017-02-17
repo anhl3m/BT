@@ -1,0 +1,61 @@
+<div id="login" class="flex-scrollable" layout="column" ms-scroll>
+    <div id="login-form-wrapper" layout="column" layout-align="center center">
+        <div id="login-form" class="md-whiteframe-8dp">
+            <div class="logo">
+                <span>F</span>
+            </div>
+            <div class="title">Log in to your account</div>
+            <form name="loginForm" novalidate>
+                <md-input-container class="md-block" md-no-float>
+                    <input type="email" name="email" ng-model="login.email" placeholder="Email"
+                           ng-pattern="/^.+@.+\..+$/" required>
+                    <div ng-messages="loginForm.email.$error" multiple>
+                        <div ng-message="required">
+                            <span>Email field is required</span>
+                        </div>
+                        <div ng-message="pattern">
+                            <span>Email must be a valid e-mail address</span>
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" md-no-float>
+                    <input type="password" name="password" ng-model="login.password" placeholder="Password" required>
+                    <div ng-messages="loginForm.password.$error">
+                        <div ng-message="required">
+                            <span>Password field is required</span>
+                        </div>
+                    </div>
+                </md-input-container>
+                <div class="remember-forgot-password" layout="row" layout-align="space-between ">
+                    <md-checkbox class="remember-me md-primary" ng-model="login.remenber">
+                        <span>Remember Me.</span>
+                    </md-checkbox>
+
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <md-button type="submit" class="md-raised md-primary submit-button" ng-click="login.login()"
+                           ng-disabled="loginForm.$invalid || loginForm.$pristine">
+                    LOG IN
+                </md-button>
+            </form>
+            <div class="separator">
+                <span class="text" translate="LOGIN.OR">OR</span>
+            </div>
+            <md-button class="md-raised google">
+                <span>Log in with Google</span>
+            </md-button>
+            <md-button class="md-raised facebook">
+                <span>
+                    Log in with Facebook
+                </span>
+            </md-button>
+
+            <div layout="row"layout-align="center center">
+                <div layout-sm="column" class="register">
+                    <span>Don't have an account?</span>
+                    <a ui-sref="register">Create an account?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
